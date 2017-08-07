@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-{{--
+
     <div class="row">
         <aside class="col-xs-4">
             <div class="panel panel-default">
@@ -21,5 +21,5 @@
             </ul>
         </div>
     </div>
---}}
+
 @endsection

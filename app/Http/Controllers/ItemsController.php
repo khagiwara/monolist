@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Item;
 
 class ItemsController extends Controller
 {
@@ -53,6 +54,7 @@ class ItemsController extends Controller
             'keyword' => $keyword,
             'items' => $items,
         ]);
+
     }
 
     /**

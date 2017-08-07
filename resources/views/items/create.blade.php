@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+<!--
+{{-- -----------------------------------------------
+<pre>
+        return view('items.create', [
+            'keyword' => $keyword,
+            'items' => $items,
+        ]);
+<?php
+print_r($_REQUEST);
+ //echo    'keyword=' , @$keyword,"<br>",
+ //        'items=' , @$items,  "<br>";
+?>
+</pre>
+--------------------------------------------------- --}}
+-->
+
     <div class="search">
         <div class="row">
             <div class="text-center">
@@ -15,6 +31,7 @@
     </div>
 
     @include('items.items', ['items' => $items])
+
 @endsection
 
 
