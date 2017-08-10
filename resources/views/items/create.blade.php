@@ -4,6 +4,8 @@
 <!--
 {{-- -----------------------------------------------
 <pre>
+    resources/views/items/create.blade.php
+
         return view('items.create', [
             'keyword' => $keyword,
             'items' => $items,

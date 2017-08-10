@@ -37,6 +37,8 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
     
+    // ---------------------------------------
+    
     public function items()
     {
         return $this->belongsToMany(Item::class)->withPivot('type')->withTimestamps();
@@ -101,7 +103,7 @@ class User extends Model implements AuthenticatableContract,
     public function have($itemId)
     {
         // 既に Have しているかの確認
-        $exist = $this->is_haveing($itemId);
+        $exist = $this->is_having($itemId);
 
         if ($exist) {
             // 既に Have していれば何もしない
@@ -117,7 +119,7 @@ class User extends Model implements AuthenticatableContract,
     public function dont_have($itemId)
     {
         // 既に Have しているかの確認
-        $exist = $this->is_haveing($itemId);
+        $exist = $this->is_having($itemId);
 
         if ($exist) {
             // 既に Have していれば Have を外す

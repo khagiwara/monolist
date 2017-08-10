@@ -49,7 +49,7 @@ class ItemsController extends Controller
                 $items[] = $item;
             }
         }
-
+        // resources/views/items/create.blade.php へ
         return view('items.create', [
             'keyword' => $keyword,
             'items' => $items,
@@ -78,12 +78,15 @@ class ItemsController extends Controller
     {
       $item = Item::find($id);
       $want_users = $item->want_users;
+      $have_users = $item->have_users;
 
       return view('items.show', [
           'item' => $item,
           'want_users' => $want_users,
+          'have_users' => $have_users,
       ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
