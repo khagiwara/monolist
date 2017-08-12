@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>resources/views/users/show.blade.php</div>
     <div class="user-profile">
         <div class="icon text-center">
             <img src="{{ Gravatar::src($user->email, 100) . '&d=mm' }}" alt="" class="img-circle">
@@ -26,7 +25,7 @@
             </ul>
         </div>
     </div>
-    @include('items.items', ['items' => $items])
+    @include('items.items', ['items' => $items,'user' => $user ])
     {!! $items->render() !!}
 @endsection
 

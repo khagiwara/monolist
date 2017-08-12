@@ -1,5 +1,6 @@
 @if ($items)
-    <div class="row">
+<?php $user = isset($user) ? $user : Auth::user(); ?>
+   <div class="row">
         @foreach ($items as $key => $item)
             <div class="item">
                 <div class="col-md-3 col-sm-4 col-xs-12">
@@ -15,8 +16,8 @@
                             @endif
                             <div class="buttons text-center">
                                 @if (Auth::check())
-                                    @include('items.want_button', ['item' => $item])
-                                    @include('items.have_button', ['item' => $item])
+                                    @include('items.want_button', ['item' => $item,'user'=>$user])
+                                    @include('items.have_button', ['item' => $item,'user'=>$user])
                                 @endif
                             </div>
                         </div>

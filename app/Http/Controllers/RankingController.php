@@ -35,7 +35,7 @@ class RankingController extends Controller
                     select items.*, COUNT(*) as count 
                     from item_user 
                     inner join items on item_user.item_id = items.id 
-                    where type = 'have' 
+                    where type = 'hav' 
                     group by items.id order by count desc limit 10
                 **************************************************** */
 
