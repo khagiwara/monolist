@@ -61,7 +61,11 @@ class UsersController extends Controller
         $count_want = $user->want_items()->count();
         $count_have = $user->have_items()->count();
         $items = \DB::table('items')->join('item_user', 'items.id', '=', 'item_user.item_id')->select('items.*')->where('item_user.user_id', $user->id)->distinct()->groupBy('items.id')->paginate(20);
-
+                /* ***************************************************
+                 select distinct items.* from items
+                 inner join item_user on items.id = item_user.item_id 
+                 where item_user.user_id` = ? group by items.id"
+                ***************************************************** */
         return view('users.show', [
             'user' => $user,
             'items' => $items,
